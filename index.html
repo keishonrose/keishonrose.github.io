@@ -1,162 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Keishon Rose — systems architect, software engineer, data analyst, and education policy analyst." />
-  <title>Keishon Rose | Systems, Data & Policy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Keishon Rose designs software, data, policy, and technology systems that help people make better decisions." />
+  <title>Keishon Rose — Systems, Data & Policy</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <canvas id="scene" aria-hidden="true"></canvas>
-  <div class="grain" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Go to homepage">
-      <span class="brand-mark">KR</span>
-      <span>Keishon Rose</span>
-    </a>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">KR</span><span>Keishon Rose</span></a>
+    <button class="menu" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#specialties">Specialties</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#identity">Identity</a><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
     </nav>
-    <button class="menu-button" aria-expanded="false" aria-label="Open navigation">Menu</button>
   </header>
 
   <main id="top">
-    <section class="hero section-shell">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Systems architect · analyst · builder</p>
-        <h1>I design systems that help people make <em>better decisions.</em></h1>
-        <p class="hero-lede">My work connects software engineering, data analysis, education policy, and technology strategy. I turn complicated processes into clear, usable systems.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">Explore my work</a>
-          <a class="button secondary" href="#about">How I think</a>
-        </div>
-        <div class="hero-proof">
-          <div><strong>4</strong><span>core disciplines</span></div>
-          <div><strong>6+</strong><span>featured projects</span></div>
-          <div><strong>1</strong><span>connected point of view</span></div>
-        </div>
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Technology architect · education policy analyst · builder</p>
+        <h1>I make complex systems <span>legible, useful, and human.</span></h1>
+        <p class="lede">I work across software engineering, data analysis, policy evaluation, and technology strategy. My projects translate messy institutions into systems people can actually understand and use.</p>
+        <div class="hero-actions"><a class="btn primary" href="#work">See the work</a><a class="btn ghost" href="#identity">Explore the model</a></div>
+        <div class="signal-row"><div><strong>4</strong><span>disciplines</span></div><div><strong>8</strong><span>case studies</span></div><div><strong>1</strong><span>systems perspective</span></div></div>
       </div>
-      <div class="hero-stage reveal" aria-label="Interactive visual model of Keishon's disciplines">
-        <div class="stage-label">Drag to explore</div>
-        <div class="orbit-label orbit-software">Software</div>
-        <div class="orbit-label orbit-data">Data</div>
-        <div class="orbit-label orbit-policy">Policy</div>
-        <div class="orbit-label orbit-strategy">Strategy</div>
-      </div>
-    </section>
 
-    <section id="specialties" class="section-shell specialties-section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Four views of the same mind</p>
-        <h2>Specialties</h2>
-        <p>Select a discipline to shift the model and see the kind of problems I solve.</p>
-      </div>
-      <div class="specialty-grid">
-        <button class="specialty-card active reveal" data-specialty="software">
-          <span class="card-index">01</span>
-          <h3>Software Engineering</h3>
-          <p>Full-stack applications, cloud architecture, authentication, workflows, and product systems.</p>
-          <span class="card-link">Focus the model ↗</span>
-        </button>
-        <button class="specialty-card reveal" data-specialty="data">
-          <span class="card-index">02</span>
-          <h3>Data Analysis</h3>
-          <p>Statistical reasoning, visualization, data quality, structured interpretation, and decision support.</p>
-          <span class="card-link">Focus the model ↗</span>
-        </button>
-        <button class="specialty-card reveal" data-specialty="policy">
-          <span class="card-index">03</span>
-          <h3>Policy & Program Analysis</h3>
-          <p>Program evaluation, economic analysis, policy research, stakeholder evidence, and recommendations.</p>
-          <span class="card-link">Focus the model ↗</span>
-        </button>
-        <button class="specialty-card reveal" data-specialty="strategy">
-          <span class="card-index">04</span>
-          <h3>Technology Strategy</h3>
-          <p>Process redesign, systems analysis, governance, product thinking, and organizational transformation.</p>
-          <span class="card-link">Focus the model ↗</span>
-        </button>
-      </div>
-    </section>
-
-    <section id="projects" class="section-shell projects-section">
-      <div class="section-heading split reveal">
-        <div>
-          <p class="eyebrow">Selected work</p>
-          <h2>Projects built around real decisions</h2>
-        </div>
-        <div class="filters" role="group" aria-label="Filter projects">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="software">Software</button>
-          <button class="filter" data-filter="data">Data</button>
-          <button class="filter" data-filter="policy">Policy</button>
-          <button class="filter" data-filter="strategy">Strategy</button>
-        </div>
-      </div>
-      <div id="projectGrid" class="project-grid"></div>
-    </section>
-
-    <section id="about" class="section-shell about-section">
-      <div class="about-quote reveal">
-        <p>“The most useful systems do not merely automate work. They make the logic of the work visible.”</p>
-      </div>
-      <div class="about-grid">
-        <div class="reveal">
-          <p class="eyebrow">About me</p>
-          <h2>I move between code, evidence, and institutions.</h2>
-        </div>
-        <div class="about-copy reveal">
-          <p>I am a technology architect and education policy graduate trained to see both the machinery of a system and the people living inside it.</p>
-          <p>My background spans enterprise technology, software development, K–12 education, graduate research, program evaluation, and product design. That range helps me ask better questions: What is the process? Where does it break? Who carries the burden? What evidence should guide the decision? What can technology improve without making the system less human?</p>
-          <div class="tool-cloud" aria-label="Tools and methods">
-            <span>React</span><span>.NET</span><span>AWS</span><span>PostgreSQL</span><span>Python</span><span>SQL</span><span>Excel modeling</span><span>Program evaluation</span><span>Policy research</span><span>Data visualization</span><span>Process design</span><span>Git</span>
+      <div class="identity-stage" id="identityStage" aria-label="Interactive three-dimensional model of Keishon's specialties">
+        <div class="stage-ui"><span>Drag to rotate</span><button id="resetModel">Reset</button></div>
+        <div class="scene" id="scene">
+          <div class="model" id="model">
+            <div class="core"><div class="core-inner">KR</div></div>
+            <div class="ring ring-a"></div><div class="ring ring-b"></div><div class="ring ring-c"></div>
+            <button class="node node-software" data-focus="software"><i></i><span>Software</span></button>
+            <button class="node node-data" data-focus="data"><i></i><span>Data</span></button>
+            <button class="node node-policy" data-focus="policy"><i></i><span>Policy</span></button>
+            <button class="node node-strategy" data-focus="strategy"><i></i><span>Strategy</span></button>
+            <div class="axis axis-x"></div><div class="axis axis-y"></div><div class="axis axis-z"></div>
           </div>
         </div>
+        <div class="stage-caption" id="stageCaption"><b>Systems thinking</b><span>Seeing the whole machine and the people inside it.</span></div>
       </div>
     </section>
 
-    <section class="timeline section-shell">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Trajectory</p>
-        <h2>A career built across systems</h2>
-      </div>
-      <div class="timeline-track reveal">
-        <article><span>Enterprise technology</span><h3>Accenture</h3><p>Large-scale systems, data quality, application development, and cross-functional delivery.</p></article>
-        <article><span>Public education</span><h3>Teaching & school systems</h3><p>Firsthand understanding of how policy, technology, and administration reach classrooms.</p></article>
-        <article><span>Graduate research</span><h3>University of Pennsylvania</h3><p>Education policy, economic evaluation, applied research, and analytical decision-making.</p></article>
-        <article><span>Independent building</span><h3>Products & platforms</h3><p>Cloud applications, workflow systems, and tools designed around real users.</p></article>
+    <section id="identity" class="identity-section shell">
+      <div class="section-head"><p class="eyebrow">Four ways I solve problems</p><h2>A connected professional identity</h2><p>Choose a specialty. The model shifts because the work changes perspective, not purpose.</p></div>
+      <div class="specialty-layout">
+        <div class="specialty-tabs" role="tablist">
+          <button class="specialty active" data-focus="software"><span>01</span><b>Software Engineering</b><small>Build the system</small></button>
+          <button class="specialty" data-focus="data"><span>02</span><b>Data Analysis</b><small>Read the evidence</small></button>
+          <button class="specialty" data-focus="policy"><span>03</span><b>Policy & Program Analysis</b><small>Evaluate the choice</small></button>
+          <button class="specialty" data-focus="strategy"><span>04</span><b>Technology Strategy</b><small>Redesign the process</small></button>
+        </div>
+        <article class="specialty-detail" id="specialtyDetail"></article>
       </div>
     </section>
 
-    <section id="contact" class="contact-section">
-      <div class="section-shell contact-inner reveal">
-        <p class="eyebrow">Let’s build something useful</p>
-        <h2>I am interested in work where technology, policy, and human systems meet.</h2>
-        <p>For roles, collaborations, or conversations about systems that deserve to work better.</p>
-        <a class="button primary" href="mailto:YOUR_EMAIL_HERE">Start a conversation</a>
-        <p class="setup-note">Replace <code>YOUR_EMAIL_HERE</code> in <code>index.html</code> before publishing.</p>
-      </div>
+    <section id="work" class="work-section shell">
+      <div class="section-head split"><div><p class="eyebrow">Selected work</p><h2>Projects with evidence, architecture, and consequence</h2></div><div class="filters" aria-label="Filter projects"><button class="active" data-filter="all">All</button><button data-filter="software">Software</button><button data-filter="data">Data</button><button data-filter="policy">Policy</button><button data-filter="strategy">Strategy</button></div></div>
+      <div class="project-grid" id="projectGrid"></div>
     </section>
+
+    <section id="about" class="about shell">
+      <div class="manifesto"><p>“A system is not neutral. It carries somebody’s assumptions into somebody else’s day.”</p></div>
+      <div class="about-grid"><div><p class="eyebrow">About</p><h2>I move between code, evidence, and institutions.</h2></div><div class="about-copy"><p>I am a technology architect and University of Pennsylvania education policy graduate. My background spans enterprise technology, software development, K–12 teaching, graduate research, program evaluation, and independent product building.</p><p>That range gives me a specific kind of fluency: I can trace a problem from the database, to the workflow, to the policy, to the person who experiences the consequences.</p><div class="tool-cloud"><span>React</span><span>ASP.NET Core</span><span>AWS</span><span>PostgreSQL</span><span>Python</span><span>SQL</span><span>Excel modeling</span><span>Program evaluation</span><span>Policy research</span><span>Data visualization</span><span>Process design</span><span>Git</span></div></div></div>
+    </section>
+
+    <section class="timeline shell">
+      <div class="section-head"><p class="eyebrow">Trajectory</p><h2>One career, several lenses</h2></div>
+      <div class="timeline-grid"><article><span>Enterprise systems</span><h3>Accenture</h3><p>Application development, SAP data quality, requirements, and cross-functional delivery.</p></article><article><span>Public education</span><h3>Classroom practice</h3><p>Teaching Algebra and Computer Science, where systems become lived experience.</p></article><article><span>Graduate research</span><h3>Penn GSE</h3><p>Education policy, economic evaluation, applied research, and evidence-based recommendations.</p></article><article><span>Independent products</span><h3>Building forward</h3><p>Cloud platforms, operational tools, and technology-readiness frameworks.</p></article></div>
+    </section>
+
+    <section id="contact" class="contact"><div class="shell contact-inner"><p class="eyebrow">Let’s build something useful</p><h2>I am interested in work where technology, policy, and human systems meet.</h2><p>Federal program analysis, technology strategy, data systems, education innovation, and mission-driven product work.</p><a class="btn primary" href="mailto:YOUR_EMAIL_HERE">Start a conversation</a><small>Replace YOUR_EMAIL_HERE in index.html before publishing.</small></div></section>
   </main>
 
-  <footer class="site-footer section-shell">
-    <span>© <span id="year"></span> Keishon Rose</span>
-    <span>Designed as a living map of my work.</span>
-  </footer>
+  <footer class="shell"><span>© <span id="year"></span> Keishon Rose</span><span>Philadelphia · Built as a living map of my work</span></footer>
 
-  <dialog id="projectDialog" class="project-dialog">
-    <button class="dialog-close" aria-label="Close project">×</button>
-    <div id="dialogContent"></div>
-  </dialog>
-
-  <script type="module" src="app.js"></script>
+  <dialog id="projectDialog"><button class="dialog-close" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <script src="app.js"></script>
 </body>
 </html>
